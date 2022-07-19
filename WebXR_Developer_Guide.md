@@ -27,7 +27,7 @@
 </html>
 ```
 
-<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220702114310156.png" style="zoom:95%;" /> 
+![](https://github.com/LalaXXX/Memory/raw/main/imgs202207191634554.png)
 
 ### Game Demo
 
@@ -47,7 +47,7 @@
 
 - 坐标系：右手坐标系
 
-<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220702141521708.png" alt="image-20220702141521708" style="zoom:50%;" /> 
+<img src="https://github.com/LalaXXX/Memory/raw/main/imgs202207191635872.png" alt="8" style="zoom:50%;" /> 
 
 - **ECS 架构**：**Entity - component - system（实体 - 组件 - 系统）**
 
@@ -137,7 +137,7 @@
    <a-scene environment = "preset: forest; grid: cross"; ></a-scene>
    ```
 
-   <img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220702140417593.png" style="zoom:80%;" />
+   ![](https://github.com/LalaXXX/Memory/raw/main/imgs202207191635338.png)
 
 3. 添加墙体
 
@@ -156,7 +156,7 @@
    <a-box scale= "30 20 4"  position= "0 0 -20"  src= #wallImg ></a-box>
    ```
 
-   <img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220702144940775.png" alt="image-20220702144940775" style="zoom:80%;" />
+   ![](https://github.com/LalaXXX/Memory/raw/main/imgs202207191636589.png)
 
 4. 添加文字
 
@@ -174,7 +174,7 @@
    ></a-text>
    ```
 
-   ![image-20220702145421270](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220702145421270.png)
+   ![image-20220702145421270](https://github.com/LalaXXX/Memory/raw/main/imgs202207191636784.png)
 
 5. 添加光标、武器
 
@@ -209,7 +209,7 @@
    </a-camera>
    ```
 
-   ![image-20220702150246202](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220702150246202.png)
+   ![image-20220702150246202](https://github.com/LalaXXX/Memory/raw/main/imgs202207191636745.png)
 
 6. 实现当光标聚焦了 start 文字时，文字变大并且变色；光标失焦是还原的效果
 
@@ -249,7 +249,7 @@
    <a-text id=start-text value=Start color=#BBB position="-3 6 -18 " scale="10 10 10" font=mozillavr start-focus></a-text>
    ```
 
-   ![image-20220702153135698](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220702153135698.png)
+   ![image-20220702153135698](https://github.com/LalaXXX/Memory/raw/main/imgs202207191637744.png)
 
 7. 监听光标点击事件
 
@@ -352,7 +352,7 @@
      }, 300);
    ```
 
-   ![image-20220702160208387](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220702160208387.png)
+   ![image-20220702160208387](https://github.com/LalaXXX/Memory/raw/main/imgs202207191637587.png)
 
 ### Panorama Demo
 
@@ -376,7 +376,7 @@
 </html>
 ```
 
-![image-20220702172521043](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220702172521043.png)
+![image-20220702172521043](https://github.com/LalaXXX/Memory/raw/main/imgs202207191637809.png)
 
 ### 调试方法
 
