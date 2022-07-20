@@ -30,7 +30,7 @@
 - mv xxx xxx
 - cp -r 
 - `scp -r /mnt/d/wjx/AIOT/AI-EXPRESS/deploy sunrise@192.168.1.10:/tmp/`
-- mount -o xx
+- mount -o xx（挂载）
 - Ubuntu：
   - sudo apt update
   - sudo apt install build-essential
@@ -195,7 +195,7 @@
 - 两种动画的区别：是否改变动画本身的属性
 - 补间动画：
 
-![示意图](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzk0NDM2NS05MTIyNjc1NWFkYzNmNmIwLmpwZz9pbWFnZU1vZ3IyL2F1dG8tb3JpZW50L3N0cmlwJTdDaW1hZ2VWaWV3Mi8yL3cvMTI0MA) 
+![示意图](https://github.com/LalaXXX/Memory/raw/main/imgs202207192340394.jpeg) 
 
 ```java
 Button mButton = (Button) findViewById(R.id.Button);
@@ -250,7 +250,7 @@ Button mButton = (Button) findViewById(R.id.Button);
 
 - 逐帧动画：
 
-![示意图](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzk0NDM2NS1iMDFhMDA1NTBjODE1OWNiLnBuZz9pbWFnZU1vZ3IyL2F1dG8tb3JpZW50L3N0cmlwJTdDaW1hZ2VWaWV3Mi8yL3cvMTI0MA) 
+![示意图](https://github.com/LalaXXX/Memory/raw/main/imgs202207192340312.png) 
 
 ```java
    <-- 直接从drawable文件夹获取动画资源（图片） -->
@@ -289,9 +289,9 @@ Button mButton = (Button) findViewById(R.id.Button);
 
 - 属性动画：
 
-![示意图](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzk0NDM2NS1iNTRiMjhmMzIwMjRjOWJhLmpwZz9pbWFnZU1vZ3IyL2F1dG8tb3JpZW50L3N0cmlwJTdDaW1hZ2VWaWV3Mi8yL3cvMTI0MA)
+![示意图](https://github.com/LalaXXX/Memory/raw/main/imgs202207192340092.jpeg)
 
-<img src="https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzk0NDM2NS05MDVlZDc3MDU4YzcxN2I1LnBuZz9pbWFnZU1vZ3IyL2F1dG8tb3JpZW50L3N0cmlwJTdDaW1hZ2VWaWV3Mi8yL3cvMTI0MA" style="zoom:100%;" />
+<img src="https://github.com/LalaXXX/Memory/raw/main/imgs202207192339080.png" style="zoom: 80%;" />  
 
 ### 屏幕适配
 
@@ -314,9 +314,9 @@ Button mButton = (Button) findViewById(R.id.Button);
 
 - 解决方案：
 
-![img](https://upload-images.jianshu.io/upload_images/944365-ced9745859537daf.png?imageMogr2/auto-orient/strip|imageView2/2/w/910/format/webp) 
+![img](https://github.com/LalaXXX/Memory/raw/main/imgs202207192339839.webp) 
 
-![img](https://upload-images.jianshu.io/upload_images/944365-04e4124d0daf0a69.png?imageMogr2/auto-orient/strip|imageView2/2/w/766/format/webp)
+![img](https://github.com/LalaXXX/Memory/raw/main/imgs202207192339242.webp) 
 
 ### RecyclerView
 
@@ -475,9 +475,9 @@ public class Solution {
 >
 > - 自组网（Adhoc）：仅由两个及以上STA自己组成，网络中不存在AP，这种类型的网络是一种松散的结构，网络中所有的STA都可以直接通信
 
-![img](https://img-blog.csdnimg.cn/20190626160400136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYW5ibF9saW51eF9hbmRyb2lk,size_16,color_FFFFFF,t_70) 
+![img](https://github.com/LalaXXX/Memory/raw/main/imgs202207192338079.png) 
 
-![img](https://upload-images.jianshu.io/upload_images/11280730-ed6a6408b7951b41.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp)
+![img](https://raw.githubusercontent.com/LalaXXX/Memory/main/imgs202207192334378.webp)
 
 - WifiStateTracker 会创建 WifiMonitor 接收来自底层的事件，WifiService 和 WifiMonitor 是整个模块的核心。
 - WifiService 负责启动关闭 wpa_supplicant、启动关闭 WifiMonitor 监视线程和把命令下发给 wpa_supplicant，WifiMonitor 负责从 wpa_supplicant 接收事件通知
@@ -567,7 +567,7 @@ public class Solution {
 
 - 布局优化
 
-<img src="2022-1-3 Note 095350.assets/image-20220419000053102.png" alt="image-20220419000053102" style="zoom:67%;" /> 
+<img src="https://github.com/LalaXXX/Memory/raw/main/imgs202207192328595.png" alt="2" style="zoom:67%;" /> 
 
 - 可观测性技术
   - Log
@@ -947,6 +947,16 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
   
   - 设定分支名为 main
 - 图片上传后不显示
+  - 确保本地网络环境 ping 通 github.com
+    - 参考 `Git进阶` 第三点
   - `https://github.com/LalaXXX/Memory/blob/main/imgs202207191555286.png`，blob 改为 raw
   - `https://github.com/lalaxxx/memory/imgs202207191558825.png`（不可用），必须使用规定的自定义域名格式
   - `https://github.com/LalaXXX/Memory/raw/main/imgs202207191600720.png`（可用）
+  - `https://raw.githubusercontent.com/LalaXXX/Memory/main/`（可用）
+
+### xxx-core
+
+> 使用 command line，区别于 app
+
+- v2rayN-Core
+- PicGo-Core
