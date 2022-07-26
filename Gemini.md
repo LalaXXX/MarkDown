@@ -47,6 +47,10 @@
 - 自动格式化：Alt + Shift + F
 - 全词替换：Ctrl + Shift + L
 
+## Notepad++
+
+- 不生成 .bak 文件：设置 -> 首选项 -> 备份（禁用）
+
 ### Git进阶
 
 - git add "xxx"（中间有空格的file name）
@@ -960,3 +964,24 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
 
 - v2rayN-Core
 - PicGo-Core
+
+### Android 图形数据流向
+
+> VSYNC-app 先于 VSYNC-sf
+>
+> surfaceflinger（HWC）：FramebufferSurface
+>
+> android.hardware.graphics.composer：FrameQueue、EventThread、VSyncThread
+>
+> UI Thread -> Render Thread（渲染） -> surfaceflinger（合成）
+>
+> OpenGL（Open Graphics Library）
+
+![image-20220725160958535](https://github.com/LalaXXX/Memory/raw/main/imgs202207251609596.png) 
+
+- 第一阶段：App 在收到 Vsync-App 的时候，在主线程进行 measure、layout、draw(构建 DisplayList , 里面包含 OpenGL 渲染需要的命令及数据) 。这里对应的 Systrace 中的主线程 **doFrame** 操作
+- 第二阶段：CPU 将数据上传（共享或者拷贝）给 GPU,　这里 ARM 设备 内存一般是 GPU 和 CPU 共享内存。这里对应的 Systrace 中的渲染线程的 **flush drawing commands** 操作
+- 第三阶段：通知 GPU 渲染，真机一般不会阻塞等待 GPU 渲染结束，CPU 通知结束后就返回继续执行其他任务，使用 Fence 机制辅助 GPU CPU 进行同步操作
+- 第四 阶段：swapBuffers，并通知 SurfaceFlinger 图层合成。这里对应的 Systrace 中的渲染线程的 **eglSwapBuffersWithDamageKHR** 操作
+- 第五阶段：SurfaceFlinger 开始合成图层，如果之前提交的 GPU 渲染任务没结束，则等待 GPU 渲染完成，再合成（Fence 机制），合成依然是依赖 GPU，不过这就是下一个任务了，这里对应的 Systrace 中的 SurfaceFlinger 主线程的 onMessageReceived 操作（包括 handleTransaction、handleMessageInvalidate、handleMessageRefresh）SurfaceFlinger 在合成的时候，会将一些合成工作委托给 Hardware Composer,从而降低来自 OpenGL 和 GPU 的负载，只有 Hardware Composer 无法处理的图层，或者指定用 OpenGL 处理的图层，其他的 图层偶会使用 Hardware Composer 进行合成
+- 第六阶段 ：最终合成好的数据放到屏幕对应的 Frame Buffer 中，固定刷新的时候就可以看到了
