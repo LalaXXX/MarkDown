@@ -6,9 +6,17 @@
 
 ## 2021.7.29
 
+### 环境变量
+
+- 按先后次序检索（移动过后，重开 cmd 检验是否生效）
+- 默认导航至文件所在的目录
+
 ### Cmd
 
-- cd /d d:
+- cd /d D:
+  - `cd /d D:\wjx\YOLOv4`
+  - C盘直接 `cd` 即可
+
 - dir /b
 - ipconfig
   - ipconfig /flushdns
@@ -47,13 +55,14 @@
 - 自动格式化：Alt + Shift + F
 - 全词替换：Ctrl + Shift + L
 
-## Notepad++
+### Notepad++
 
 - 不生成 .bak 文件：设置 -> 首选项 -> 备份（禁用）
 
 ### Git进阶
 
 - git add "xxx"（中间有空格的file name）
+- git push origin xxx（HEAD:xxx），新建分支提交
 - 新建 .gitignore 添加需要忽略的文件
 - Failed to connect to github.com port 443 after 21103 ms: Timed out（github.com ping 不通）
   - 修改 C:\Windows\System32\drivers\etc\hosts，`https://github.com.ipaddress.com/www.github.com`
@@ -952,11 +961,12 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
   - 设定分支名为 main
 - 图片上传后不显示
   - 确保本地网络环境 ping 通 github.com
-    - 参考 `Git进阶` 第三点
+    - 参考 `Git进阶` 第四点
   - `https://github.com/LalaXXX/Memory/blob/main/imgs202207191555286.png`，blob 改为 raw
   - `https://github.com/lalaxxx/memory/imgs202207191558825.png`（不可用），必须使用规定的自定义域名格式
   - `https://github.com/LalaXXX/Memory/raw/main/imgs202207191600720.png`（可用）
   - `https://raw.githubusercontent.com/LalaXXX/Memory/main/`（可用）
+  - 开启 VPN
 
 ### xxx-core
 
@@ -985,3 +995,47 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
 - 第四 阶段：swapBuffers，并通知 SurfaceFlinger 图层合成。这里对应的 Systrace 中的渲染线程的 **eglSwapBuffersWithDamageKHR** 操作
 - 第五阶段：SurfaceFlinger 开始合成图层，如果之前提交的 GPU 渲染任务没结束，则等待 GPU 渲染完成，再合成（Fence 机制），合成依然是依赖 GPU，不过这就是下一个任务了，这里对应的 Systrace 中的 SurfaceFlinger 主线程的 onMessageReceived 操作（包括 handleTransaction、handleMessageInvalidate、handleMessageRefresh）SurfaceFlinger 在合成的时候，会将一些合成工作委托给 Hardware Composer,从而降低来自 OpenGL 和 GPU 的负载，只有 Hardware Composer 无法处理的图层，或者指定用 OpenGL 处理的图层，其他的 图层偶会使用 Hardware Composer 进行合成
 - 第六阶段 ：最终合成好的数据放到屏幕对应的 Frame Buffer 中，固定刷新的时候就可以看到了
+
+## 2022.7.26
+
+### CUDA
+
+> Compute Unified Device Architecture，统一计算架构
+
+### Python
+
+- 字符串 `''` （单引号）包裹
+- 不能有多余空格
+
+### YOLOv4
+
+- conda create --name torch36 python=3.6（指定 python 版本，创建虚拟环境）
+  - C:\Users\Lenovo\anaconda3\envs\torch36
+
+- conda activate torch36
+
+- conda install pytorch torchvision torchaudio cpuonly -c pytorch（安装 pytorch，CPU）
+
+  ```python
+  device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+  
+  # model.cuda()
+  model.to(device)
+    
+  # prediction = model([image.cuda()])
+  prediction = model([image.to(device)])
+  ```
+
+- 安装 opencv-pytorch，`https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv`，将其放到前面创建的 torch36 的 site-packages 文件夹中
+
+- pip install opencv_python-4.4.0-cp36-cp36m-win_amd64.whl（根据 python 版本选择）
+
+  - C:\Users\Lenovo\anaconda3\envs\torch36\Lib\site-packages
+
+- python demo.py -cfgfile cfg/yolov4.cfg -weightfile weights/yolov4.weights -imgfile data/dog.jpg
+
+  - pytorch-YOLOv4 目录下 demo.py 文件
+
+- 生成 predictions.jpg 文件
+
+<img src="https://github.com/LalaXXX/Memory/raw/main/imgs202207262139316.jpg" alt="predictions" style="zoom: 80%;" /> 
