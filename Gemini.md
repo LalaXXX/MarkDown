@@ -848,7 +848,9 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
 
 ### SSL、TLS、HTTPS
 
-> 
+> Secure Socket Layer（安全套接字层）
+>
+> Transport Layer Security（传输层安全）
 
 ## 2022.7.16
 
@@ -956,7 +958,9 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
 
 ### xxx-core
 
-> 使用 command line，区别于 app
+> 使用 command line，区别于 软件应用
 
 - v2rayN-Core
 - PicGo-Core
+
+### Android 源码编译
