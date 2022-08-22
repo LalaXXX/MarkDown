@@ -745,17 +745,19 @@ ganache: {
 >
 > html 与 js 怎么交互？
 >
+> GLTF 素材库：`https://market.pmnd.rs/`
+>
 > 带空格的字串属性，需要使用""包围
 >
 > ```html
 > <!-- 文本 -->
->  <a-text
->     id= start-text 
->     value= Start 
->     color= #BBB 
->     position= "-3 6 -18 "
->     scale= "10 10 10" 
->     font= mozillavr 
+> <a-text
+>  id= start-text 
+>  value= Start 
+>  color= #BBB 
+>  position= "-3 6 -18 "
+>  scale= "10 10 10" 
+>  font= mozillavr 
 > ></a-text>
 > ```
 
@@ -1039,3 +1041,19 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
 - 生成 predictions.jpg 文件
 
 <img src="https://github.com/LalaXXX/Memory/raw/main/imgs202207262139316.jpg" alt="predictions" style="zoom: 80%;" /> 
+
+## 2022.7.27
+
+### Postman
+
+- Error: tunneling socket could not be established, statusCode=500
+  - 关闭 VPN
+- "errors": [API] This action requires merchant approval for read_products scope
+  - API 权限组没有全开 -> 生成的 Token 没有权限
+- "errors": "[API] Invalid API key or access token (unrecognized login or wrong password)"
+  - 40 Unauthorized
+  - 缺少 Token
+- -H 'X-Shopify-Access-Token: {access_token}'
+  - -H：Headers
+  - KEY：X-Shopify-Access-Token
+  - VALUE：access_token
