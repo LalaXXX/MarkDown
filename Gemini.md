@@ -26,11 +26,23 @@
 - findstr
 - java -jar xxx（执行 jar 包，**需要配置 jre 环境变量**）
 
+### ADB 进阶
+
+- adb shell logcat -b all
+- adb shell atrace
+- adb shell ifconfig（板子 ip 相关）
+- adb shell cat /proc/cpuinfo
+- adb shell cat /proc/meminfo
+- adb shell dumpsys cpuinfo
+- adb shell dumpsys meminfo
+
 ### Linux 进阶
 
 > GNU 编译器集合是一系列用于语言开发的编译器和库的集合，包括: C, C++, Objective-C, Fortran, Ada, Go, and D等编程语言，很多开源项目，包括 Linux kernel 和 GNU 工具，都是使用 GCC 进行编译的
 
 - `/`：根目录
+- `.`：此目录
+  - adb pull xxx .
 - sh
 - bash（兼容 sh）
 - vi xxx（:q! 退出）
@@ -77,6 +89,8 @@
 - 取消代理：
   - git config --global --unset http.proxy
   - git config --global --unset https.proxy
+- gitk 打开中文乱码
+  - git config --global gui.encoding utf-8
 ### Binder机制
 
 - LMK（Loadable Kernel Module）：
@@ -863,7 +877,9 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
 
 ### SSL、TLS、HTTPS
 
-> 
+> Secure Socket Layer（安全套接字层）
+>
+> Transport Layer Security（传输层安全）
 
 ## 2022.7.16
 
@@ -972,11 +988,12 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
 
 ### xxx-core
 
-> 使用 command line，区别于 app
+> 使用 command line，区别于 软件应用
 
 - v2rayN-Core
 - PicGo-Core
 
+### Android 源码编译
 ### Android 图形数据流向
 
 > VSYNC-app 先于 VSYNC-sf
@@ -1012,8 +1029,9 @@ wget https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar
 ### YOLOv4
 
 - conda create --name torch36 python=3.6（指定 python 版本，创建虚拟环境）
-  - C:\Users\Lenovo\anaconda3\envs\torch36
-
+  
+- C:\Users\Lenovo\anaconda3\envs\torch36
+  
 - conda activate torch36
 
 - conda install pytorch torchvision torchaudio cpuonly -c pytorch（安装 pytorch，CPU）
